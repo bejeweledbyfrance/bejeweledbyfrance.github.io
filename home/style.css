@@ -205,7 +205,25 @@ body{
     
 }
 
+@media (max-width: 730px){
+    .ulbracelets{
+        top: 100px;
+    }
+}
 
+
+
+@media (max-width: 576px){
+    .ulbracelets{
+        top: 200px;
+    }
+}
+
+@media (max-width: 422px){
+    .ulbracelets{
+        top: 500px;
+    }
+}
 
 
 
@@ -260,12 +278,15 @@ body{
     margin: 0;
     padding: 0;
     left: 100px;
+    
     /* top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); */
     
     margin: 50vh auto 0;
     transform: translateY(-50%);
+
+   
    
 }
 

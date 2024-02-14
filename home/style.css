@@ -221,15 +221,17 @@ body{
 
 @media (max-width: 422px){
     .ulbracelets{
-        top: 500px;
+        top: 200px;
     }
 }
 
-@media (max-width: 422px){
+@media (max-width: 421.5px){
     .ulbracelets{
-        top: 500px;
+        top: 480px;
     }
 }
+
+
 
 
 

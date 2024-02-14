@@ -4,6 +4,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Molle&family=Praise&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
 *{
   
     box-sizing: border-box;
@@ -11,9 +13,16 @@
 }
 
 html{
+    scroll-behavior: smooth;
+    /* scroll-padding-top: 100px; */
+}
+
+
+/* html{
     scrollbar-width: normal;
     scrollbar-color: #e4a6d1 rgb(238, 234, 234);
-}
+    
+} */
 
 /* html::-webkit-scrollbar{
     width: 4vw;
@@ -38,7 +47,7 @@ body{
 .navbar{
     top: 0px;
     
-    background: linear-gradient(to right, rgb(228, 218, 218), rgb(229, 198, 203), rgb(208, 168, 173));
+    background: linear-gradient(to right, rgb(230, 225, 225), rgb(210, 192, 195), rgb(196, 154, 161));
 
     width: 100%;
     
@@ -60,13 +69,17 @@ body{
 }
 
 .bejeweled{
-    font-size: 1.5rem;
+    color: rgb(219, 185, 189);
+    font-size: 2rem;
     font-family: 'Praise', cursive;
+    text-shadow: 1px 1px 2px rgb(255, 0, 43);
 }
 .byfrance{
-    margin-left: .1rem;
-    font-size: 1rem;
+    color: rgb(250, 105, 130);
+    margin-left: .3rem;
+    font-size: 1.1rem;
     text-transform: uppercase;
+    
 }
 
 .navbar-links{
@@ -85,8 +98,7 @@ body{
     padding: 0;
     display: flex;
     
-    /* place-items: center; */
-    /* margin-right: 20px; */
+    
 
 }
 
@@ -118,8 +130,8 @@ body{
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 49.5px;
-    border-radius: 8px 8px 0 0;
+    height: 50px;
+    border-radius: 10px 10px 0 0;
     
     transform-origin: bottom;
     background: linear-gradient(to right, rgb(228, 154, 166), rgb(232, 136, 149), rgb(240, 129, 147));
@@ -156,6 +168,7 @@ body{
 }
 
 @media (max-width: 620px){
+
     .toggle-button{
         display: flex;
     }
@@ -185,10 +198,15 @@ body{
 
     .navbar-links.active{
         display: flex;
-    }
+    }   
+
+    
 
     
 }
+
+
+
 
 
 
@@ -196,11 +214,11 @@ body{
     padding: 0;
     margin: 0;
     display: flex;
-    background: linear-gradient(to right, rgb(228, 218, 218), rgb(229, 198, 203), rgb(208, 168, 173));
+    background: linear-gradient(to right, rgb(230, 225, 225), rgb(210, 192, 195), rgb(196, 154, 161));
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     overflow:hidden;
     
 }
@@ -210,219 +228,98 @@ body{
     grid-template-columns: 400px;
     grid-template-rows: 400px;
     margin-top: 45px;
-    
-    /* background: linear-gradient( rgb(215, 209, 209), rgb(216, 200, 203), rgb(209, 200, 201)); */
-    border-radius: 200px;
-    /* box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9); */
+    border-radius: 200px; 
     transition: 0.5s ease;
     cursor: not-allowed;
-    
-
     transform-style: preserve-3d;
     transform: perspective(1000px);
 }
 
 .card-image{
-
-    
-
     background: url(logo.png);
-    
-  height: 400px;
-  width: 400px;
-  
-    /* border-top-left-radius: 15px;
-    border-top-right-radius: 15px; */
+    height: 400px;
+    width: 400px;
     background-size: cover;
     transform: translateZ(90px);
 }
 
-.card:hover{
-   
+.card:hover{  
     transform: scale(1.2);
-    /* box-shadow: 5px 5px 5px rgba(58, 55, 55, 0.6); */
 }
 
 
 #braceletsbody{
-    
     width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow:hidden;
-    background: linear-gradient(to right, rgb(228, 218, 218), rgb(229, 198, 203), rgb(208, 168, 173));
+    min-height: 100vh;
+    background: linear-gradient(to right, rgb(230, 225, 225), rgb(210, 192, 195), rgb(196, 154, 161));
+    
 } 
 
-.container{
+.gallery{
     
     width: 100%;
-    min-height: 100vh;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    overflow: hidden;
+    overflow-x: scroll;
 }
 
-.imgcontainer{
-    
+.gallery div{
     width: 100%;
-    min-height: 100vh;
-    position: absolute;
-    
-    left: 0;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 1px;
+    padding: 5px;
+    flex: none;
+}
+
+.gallery div img{
+    width: 150px;
+    height:200px;
+    filter: grayscale(100%);
+    transition: .5s ease;
+}
+
+.gallery::-webkit-scrollbar{
+    display: none;
+}
+
+.gallery-wrap{
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all 1s ease;
-    
+    margin: 10% auto;
 }
 
-.slide_div{
-    
+.nextbackbtn{
     display: flex;
-    align-items: center;
     justify-content: center;
-    margin: 0 5px 0 5px;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+}
+
+.gallerybtn{
+    width: 50px;
+    height: 50px;
+}
+
+#backbtn, #nextbtn{
+    cursor: pointer;
+    margin: 40px;
+}
+
+.gallery div img:hover{
+    filter: grayscale(0);
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 
 
 
-.slide_div img{
-    
-    margin-top: 90px;
-    width: 240px;
-    height: 370px;
-    position: relative;
-    filter: saturate(10%);
-    background-color: rgba(0, 0, 0, 0.4);
-    border-radius: 20px;
-    transition: all 0.7s ease;
-    
-
-}
-
-.button{
-    margin-top: 90px;
-    position: absolute;
-    width: 240px;
-    height: 370px;
-    transition: all 0.7s ease;
-    background-color: rgba(0, 0, 0, 0.4);
-    border-radius: 20px;
-}
-
-.button:hover{
-    background-color: rgba(0, 0, 0, 0.2);
-    
-}
-
-#slider1:target ~ .imgcontainer #img1,
-#slider1:target ~ .imgcontainer #button1
-{
-    width: 300px;
-    height: 400px;
-    background-color: transparent;
-    filter: saturate(100%);
-    
-    
-}
-
-#slider2:target ~ .imgcontainer #img2,
-#slider2:target ~ .imgcontainer #button2
-{
-    width: 300px;
-    height: 400px;
-    background-color: transparent;
-    filter: saturate(100%);
-    
-}
-
-#slider3:target ~ .imgcontainer #img3,
-#slider3:target ~ .imgcontainer #button3
-{
-    width: 300px;
-    height: 400px;
-    background-color: transparent;
-    filter: saturate(100%);
-    
-}
-
-#slider4:target ~ .imgcontainer #img4,
-#slider4:target ~ .imgcontainer #button4
-{
-    width: 300px;
-    height: 400px;
-    background-color: transparent;
-    filter: saturate(100%);
-    
-}
-
-#slider5:target ~ .imgcontainer #img5,
-#slider5:target ~ .imgcontainer #button5
-{
-    width: 300px;
-    height: 400px;
-    background-color: transparent;
-    filter: saturate(100%);
-    
-}
-
-#slider6:target ~ .imgcontainer #img6,
-#slider6:target ~ .imgcontainer #button6
-{
-    width: 300px;
-    height: 400px;
-    background-color: transparent;
-    filter: saturate(100%);
-    
-    
-}
-
-#slider7:target ~ .imgcontainer #img7,
-#slider7:target ~ .imgcontainer #button7
-{
-    width: 300px;
-    height: 400px;
-    background-color: transparent;
-    filter: saturate(100%);
-    
-}
 
 
-#slider1:target ~ .imgcontainer{
-    left: 30%;
-}
-
-#slider2:target ~ .imgcontainer{
-    left: 20%;
-}
 
 
-#slider3:target ~ .imgcontainer{
-    left: 10%;
-}
-
-
-#slider4:target ~ .imgcontainer{
-    left: 0%;
-}
-
-
-#slider5:target ~ .imgcontainer{
-    left: -10%;
-}
-
-
-#slider6:target ~ .imgcontainer{
-    left: -20%;
-}
-
-#slider7:target ~ .imgcontainer{
-    left: -30%;
-}
 
 #aboutbody {
     /* display: flex;
@@ -434,8 +331,139 @@ body{
     min-height: 100vh;
     
     overflow:hidden;
-    background: linear-gradient(to right, rgb(228, 218, 218), rgb(229, 198, 203), rgb(208, 168, 173)); 
+    background: linear-gradient(to right, rgb(230, 225, 225), rgb(210, 192, 195), rgb(196, 154, 161));
+
+    background-size: cover;
+    background-repeat: repeat;
 }
+
+.ulbracelets{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    left: 100px;
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    
+    margin: 50vh auto 0;
+    transform: translateY(-50%);
+   
+}
+
+.libracelets{
+    text-align: center;
+    display: inline-block;
+    list-style: none;
+    position: relative;
+    border: solid 12px white;
+    background: #FDFEFF;
+    box-shadow: 0 0 15px 0px #555;
+    transition: all 1s ease;
+    top: 19px;
+    width: 150px;
+    height: 200px;
+    border-radius: 2px;
+    
+}
+
+.libracelets img{
+    width: 120px;
+    height: 155px; 
+    filter: grayscale(1);
+    transition: 1s ease;
+    border-radius: 2px;
+}
+
+.textbracelets{
+    font-family: 'Permanent Marker', cursive;
+    text-transform: uppercase;
+}
+
+
+
+.libracelets:hover img{
+    filter: grayscale(0);
+}
+
+
+.li1{
+    transform: rotate(10deg);
+}
+
+.li1:hover{
+    transform: rotate(0);
+    transform: scale(1.5);
+    z-index: 1;
+    top: 40px;
+}
+
+.li2{
+    transform: rotate(-14deg);
+}
+
+.li2:hover{
+    transform: rotate(0);
+    transform: scale(1.5);
+    z-index: 1;
+    top: 40px;
+}
+
+.li3{
+    transform: rotate(6deg);
+}
+
+.li3:hover{
+    transform: rotate(0);
+    transform: scale(1.5);
+    z-index: 1;
+    top: 40px;
+}
+
+.li4{
+    transform: rotate(20deg);
+}
+
+.li4:hover{
+    transform: rotate(0);
+    transform: scale(1.5);
+    z-index: 1;
+    top: 40px;
+}
+
+.li5{
+    transform: rotate(-15deg);
+}
+
+.li5:hover{
+    transform: rotate(0);
+    transform: scale(1.5);
+    z-index: 1;
+    top: 0px;
+}
+
+.li6{
+    transform: rotate(5deg);
+}
+
+.li6:hover{
+    transform: rotate(0);
+    transform: scale(1.5);
+    z-index: 1;
+    top: 0px;
+}
+
+.li7{
+    transform: rotate(-15deg);
+}
+
+.li7:hover{
+    transform: rotate(0);
+    transform: scale(1.5);
+    z-index: 1;
+    top: 0px;
+}
+
 
 .aboutcontainer{
     width: 100%;
@@ -451,6 +479,8 @@ body{
     border-radius: 15px;
     perspective: 1000px;
     cursor: pointer;
+
+    margin-top: 150px;
 }
 
 .card-inner{
@@ -464,7 +494,7 @@ body{
     transition: transform 1s;
     transform-style: preserve-3d;
 
-    box-shadow: 5px 5px 20px 5px rgba(203, 134, 134, 0.9);
+    box-shadow: 5px 5px 10px rgba(203, 134, 134, 0.9);
 }
 
 .front {
@@ -508,26 +538,35 @@ body{
     transform: rotateY(180deg);
 }
 
-ion-icon{
+.logo-instagram{
+    color: #FDFEFF;
     transition: .5s ease;
     width: 150px;
     height: 150px;
-    animation: animate 1s linear infinite;
+    animation: animate 6s ease-in-out infinite;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #d8cf67 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);;
+    border-radius: 50px;
+
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translateY(0px);
+    
     
 }
 
 @keyframes animate {
     0%{
-        transform: translateY(-5%);
-        opacity: 1;
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translateY(0px);
+        
     }
     50%{
-        transform: translateY(0%);
-        opacity: 0.5;
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.2);
+        transform: translateY(-20px);
+        
     }
     100%{
-        transform: translateY(-5%);
-        opacity: 1;
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translateY(0px);
     }
 }
 
@@ -537,6 +576,7 @@ ion-icon{
     padding: 0;
     text-align: center;
     font-size: 1rem;
+    cursor: none;
 }
 
 .insta{
@@ -549,12 +589,16 @@ ion-icon{
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-  
+    
+    cursor: none;
 }
 
 
-ion-icon:hover{
-    animation: none;
+
+
+.logo-instagram:hover{
+    color: rgb(222, 215, 215);
+    
 }
 
 .back p{

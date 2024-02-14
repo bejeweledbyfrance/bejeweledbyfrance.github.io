@@ -225,6 +225,12 @@ body{
     }
 }
 
+@media (max-width: 422px){
+    .ulbracelets{
+        top: 500px;
+    }
+}
+
 
 
 

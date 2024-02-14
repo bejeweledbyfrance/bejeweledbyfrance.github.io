@@ -225,13 +225,7 @@ body{
     }
 }
 
-@media only screen 
-        and (device-width: 428px) 
-        and (device-height: 926px) 
-        and (-webkit-device-pixel-ratio: 3) {
-            .ulbracelets{
-                top: 200px;
-         }
+
 
 @media (max-width: 421.5px){
     .ulbracelets{

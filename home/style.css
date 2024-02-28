@@ -42,13 +42,13 @@ body{
     padding: 0;
     font-family: 'Poppins', sans-serif;
     letter-spacing: .5px;
-   
+    background: linear-gradient(to right, rgb(230, 225, 225), rgb(210, 192, 195), rgb(196, 154, 161));
 }
 
 .navbar{
     top: 0px;
     
-    background: linear-gradient(to right, rgb(230, 225, 225), rgb(210, 192, 195), rgb(196, 154, 161));
+    background: transparent;
 
     width: 100%;
     
@@ -319,11 +319,12 @@ body{
 
 #braceletsbody{
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     background: linear-gradient(to right, rgb(230, 225, 225), rgb(210, 192, 195), rgb(196, 154, 161));
     /* margin-top: 100px; */
     position: relative;
     /* overflow: hidden; */
+    
 } 
 
 /* .braceletscontainer{
@@ -345,9 +346,9 @@ body{
     padding-left: .5rem;
     padding-right: .5rem; */
 
-    height: 100vh;
+    height: 80vh;
     
-    top: 100px;
+    top: 150px;
     
     flex-wrap: wrap;
     
@@ -545,7 +546,7 @@ body{
     transition: transform 1s;
     transform-style: preserve-3d;
 
-    box-shadow: 5px 5px 10px rgba(203, 134, 134, 0.9);
+    /* box-shadow: 2px 2px 1px 2px rgba(203, 134, 134, 0.9); */
 }
 
 .front {

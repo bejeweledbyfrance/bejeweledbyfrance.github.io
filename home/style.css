@@ -14,7 +14,12 @@
 
 html{
     scroll-behavior: smooth;
-    
+    --bg-image: linear-gradient(
+        45deg,
+        #e6e1e1, 
+        #d2c0c3, 
+        #c49aa1
+        );
     /* scroll-padding-top: 100px; */
 }
 
@@ -42,7 +47,19 @@ body{
     padding: 0;
     font-family: 'Poppins', sans-serif;
     letter-spacing: .5px;
-    background: linear-gradient(to right, rgb(230, 225, 225), rgb(210, 192, 195), rgb(196, 154, 161));
+    background: #150101;
+    background-image: var(--bg-image);
+    background-size: 400%;
+    animation: bg-animation 5s infinite alternate;
+}
+
+@keyframes bg-animation{
+    0%{
+        background-position: left;
+    }
+    100%{
+        background-position: right;
+    }
 }
 
 .navbar{
@@ -150,9 +167,9 @@ body{
     color: #FDFEFF;
 }
 
-/* .active{
-    color: #fff;
-} */
+.active1{
+    background-color: #d8cf67;
+}
 
 .toggle-button{
     position: absolute;
@@ -192,13 +209,16 @@ body{
     .navbar{
         flex-direction: column;
         align-items: flex-start;
-        background: linear-gradient(to right, rgba(230, 225, 225, 0.8), rgba(210, 192, 195, 0.8), rgba(196, 154, 161, 0.8));
+        
     }
 
     .navbar-links ul{
         width: 100%;
         flex-direction: column;
-        /* background: linear-gradient(to right, rgba(230, 225, 225, 0.8), rgba(210, 192, 195, 0.8), rgba(196, 154, 161, 0.8)); */
+        /* background: linear-gradient(45deg, 
+        rgba(230, 225, 225, 0.9), 
+        rgba(210, 192, 195, 0.9), 
+        rgba(196, 154, 161, 0.9)); */
     }
     
 
@@ -213,10 +233,20 @@ body{
     .navbar-links.active{
         display: flex;
     }   
+
+    .navbar.active{
+        background: linear-gradient(45deg, 
+        rgba(230, 225, 225, 0.9), 
+        rgba(210, 192, 195, 0.9), 
+        rgba(196, 154, 161, 0.9));
+    }
     
 }
 
 
+
+
+/* 
 @media (min-width: 475px){
     .ulbracelets{
         max-width: 100%;
@@ -226,6 +256,7 @@ body{
 @media (min-width: 640px){
     .ulbracelets{
         max-width: 100%;
+        
     }
 }
 
@@ -254,7 +285,8 @@ body{
         max-width: 100%;
         transform: translateY(-15%);
     }
-}
+} */
+
 
 
 /* @media (max-width: 730px){
@@ -296,7 +328,7 @@ body{
     padding: 0;
     margin: 0;
     display: flex;
-    background: linear-gradient(to right, rgb(230, 225, 225), rgb(210, 192, 195), rgb(196, 154, 161));
+    /* background: linear-gradient(to right, rgb(230, 225, 225), rgb(210, 192, 195), rgb(196, 154, 161)); */
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -332,16 +364,13 @@ body{
 
 #braceletsbody{
     width: 100%;
-    height: 90vh;
-    background: linear-gradient(to right, rgb(230, 225, 225), rgb(210, 192, 195), rgb(196, 154, 161));
-    /* margin-top: 100px; */
-    position: relative;
-    /* overflow: hidden; */
-    /* border: 2px solid #285AEB; */
-    top: 60px;
-
-    margin-left: auto;
-    margin-right: auto;
+    min-height: 100vh;
+    overflow: hidden;
+    
+    
+    
+   
+    
 
 } 
 
@@ -353,42 +382,35 @@ body{
 } */
 
 .ulbracelets{
-    position: absolute;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    width: 90%;
-    /* margin-left: auto;
-    margin-right: auto;
-    padding-left: .5rem;
-    padding-right: .5rem; */
-
     flex-wrap: wrap;
-    height: 70vh;
-    top: 0;
+    justify-content: center;
     
-    right: 0;
-    left: 0;
-    bottom: 0;
-    margin: auto;
 
-    
-    
-    /* top: 50%; */
-    /* left: 50%; */
-    /* transform: translate(-50%, -50%);  */
-    
-    /* margin: 50vh auto 0;
-    transform: translateY(-50%);
-     */
-   
+    margin-top: 200px;
+    margin-left: 10px;
+    margin-right: 10px;
+    /* border: 1px solid black; */
    
 }
+@media (max-width: 620px){
+    .ulbracelets{
+        margin-top: 100px;
+        
+    }
+}
+
+@media (max-width: 469px){
+    .ulbracelets{
+        margin-top: 65px;
+        
+    }
+}
+
 
 .libracelets{
     text-align: center;
-    display: inline-block;
+    display: block;
     list-style: none;
     position: relative;
     border: solid 12px white;
@@ -399,6 +421,8 @@ body{
     width: 150px;
     height: 200px;
     border-radius: 2px;
+
+    
     
     
     
@@ -527,17 +551,17 @@ body{
     min-height: 100vh;
     
     overflow:hidden;
-    background: linear-gradient(to right, rgb(230, 225, 225), rgb(210, 192, 195), rgb(196, 154, 161));
+    /* background: linear-gradient(to right, rgb(230, 225, 225), rgb(210, 192, 195), rgb(196, 154, 161)); */
 
-    background-size: cover;
-    background-repeat: repeat;
+    /* background-size: cover;
+    background-repeat: repeat; */
 }
 
 
 
 .aboutcontainer{
     width: 100%;
-    min-height: 100vh;
+    
     overflow: hidden;
 
     display: flex;
